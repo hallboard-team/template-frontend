@@ -2,9 +2,9 @@
 # -----------------------------
 # Start Podman Compose for Angular dev environment
 # Usage:
-#   ./start-dev.frontend.sh <container-name> <port> <node version> <angular version>
+#   ./start-dev.sh <container-name> <port> <node version> <angular version>
 # Example:
-#   ./start-dev.frontend.sh reza-project 4200 22 19
+#   ./start-dev.sh angular-pnpm 4200 22 19
 # -----------------------------
 
 set -euo pipefail
