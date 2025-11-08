@@ -10,7 +10,7 @@ services:
         ANGULAR_VERSION: ${ANGULAR_VERSION:-20}
 
     image: ghcr.io/hallboard-team/node-${NODE_VERSION}:latest
-    container_name: ${CONTAINER_NAME:-frontend_angular-${ANGULAR_VERSION}_p${PORT}_dev}
+    container_name: ${CONTAINER_NAME:-frontend_angular-v${ANGULAR_VERSION}_p${PORT}_dev}
 
     user: "1000:1000"
 
