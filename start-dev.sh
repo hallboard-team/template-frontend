@@ -4,7 +4,7 @@
 # Usage:
 #   ./start-dev.sh <container-name> <port> <node version> <angular version>
 # Example:
-#   ./start-dev.sh angular-pnpm 4200 22 19
+#   ./start-dev.sh school_angular-pnpm 4200 22 19
 # -----------------------------
 
 set -euo pipefail
