@@ -1,0 +1,10 @@
+{
+  "name": "Hallboard Front-End Template",
+  "dockerComposeFile": "../podman-compose.frontend.yml",
+  "service": "frontend",
+  "workspaceFolder": "/workspaces/app",
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server-shared"
+  }
+}
