@@ -9,8 +9,8 @@ services:
         NODE_VERSION: ${NODE_VERSION:-22}
         ANGULAR_VERSION: ${ANGULAR_VERSION:-20}
 
-    image: ghcr.io/hallboard-team/frontend-node${NODE_VERSION}-angular${ANGULAR_VERSION}:latest
-    container_name: ${CONTAINER_NAME:-frontend_angular_dev}
+    image: ghcr.io/hallboard-team/node-${NODE_VERSION}:latest
+    container_name: ${CONTAINER_NAME:-frontend_angular${ANGULAR_VERSION}_dev}
 
     user: "1000:1000"
 
