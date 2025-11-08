@@ -4,7 +4,7 @@
 # Usage:
 #   ./start-dev.sh <container-name> <port> <node version> <angular version>
 # Example:
-#   ./start-dev.sh school_angular-pnpm 4200 22 19
+#   ./start-dev.sh school 4200 22 19
 # -----------------------------
 
 set -euo pipefail
@@ -17,9 +17,9 @@ ANGULAR_VERSION="${4:-20}"
 
 # Build container name dynamically
 if [ -z "$CUSTOM_NAME" ]; then
-  CONTAINER_NAME="frontend_angular${ANGULAR_VERSION}_dev"
+  CONTAINER_NAME="frontend_angular-v${ANGULAR_VERSION}_pnpm_p${PORT}_dev"
 else
-  CONTAINER_NAME="${CUSTOM_NAME}_angular${ANGULAR_VERSION}_dev"
+  CONTAINER_NAME="${CUSTOM_NAME}_angular-v${ANGULAR_VERSION}_pnpm_p${PORT}_dev"
 fi
 
 # Fix VS Code shared cache permissions
