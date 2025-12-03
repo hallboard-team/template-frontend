@@ -16,7 +16,7 @@ ANGULAR_VERSION="${3:-20}"
 
 IMAGE="ghcr.io/hallboard-team/node-v${NODE_VERSION}_angular-v${ANGULAR_VERSION}:latest"
 CONTAINER_NAME="frontend_node-v${NODE_VERSION}_angular-v${ANGULAR_VERSION}_pnpm_p${PORT}_dev"
-COMPOSE_FILE="../podman-compose.frontend.yml"
+COMPOSE_FILE="podman-compose.frontend.yml"
 
 # Fix VS Code shared cache permissions
 sudo rm -rf ~/.cache/vscode-server-shared
