@@ -1,12 +1,10 @@
-# Used for VS Code only
-
 version: "3.9"
 
 services:
   frontend:
-    image: ghcr.io/hallboard-team/node-v22_angular-v20:latest
+    image: ghcr.io/hallboard-team/node-v${NODE_VERSION:-22}_angular-v${ANGULAR_VERSION:-20}:latest
 
-    user: "1000:1000"
+    user: "0:0"
     working_dir: /workspaces/app
 
     volumes:
@@ -16,7 +14,6 @@ services:
     environment:
       VSCODE_SERVER_DIR: /vscode/vscode-server
 
-    # Each project can override DEV_PORT via .env
     ports:
       - "${DEV_PORT:-4200}:4200"
 
