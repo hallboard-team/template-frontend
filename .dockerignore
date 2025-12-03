@@ -1,34 +1,52 @@
-# Ignore git data
+########################################
+# Git
+########################################
 .git
 .gitignore
 
-# IDE / editor
-.vscode
-.idea
+########################################
+# Node dependencies
+########################################
+node_modules/
+.pnpm-store/
+
+########################################
+# Angular build outputs
+########################################
+dist/
+build/
+tmp/
+temp/
+out/
+
+########################################
+# Editor / IDE
+########################################
+.vscode/
+.idea/
 *.swp
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
 
-# Build output
-artifacts/
+########################################
+# Logs
+########################################
+*.log
 
-# Docker files themselves
-Dockerfile*
+########################################
+# OS Files
+########################################
+.DS_Store
+Thumbs.db
+
+########################################
+# DevContainer & Podman (host-only)
+########################################
+
+.devcontainer/
+podman/
 docker-compose*
 podman-compose*
 
-# Dev container config
-.devcontainer/
-.vscode-server/
-
-# Logs and temporary files
-*.log
-logs/
-tmp/
-temp/
-
-# OS files
-.DS_Store
-Thumbs.db
+########################################
+# Anything not needed inside the build context
+########################################
+README.md
