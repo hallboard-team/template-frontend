@@ -6,7 +6,6 @@ services:
     image: ghcr.io/hallboard-team/node-v${NODE_VERSION:-22}_angular-v${ANGULAR_VERSION:-20}:latest
     container_name: ${CONTAINER_NAME}
 
-    user: "1000:1000"
     working_dir: /workspaces/app
 
     volumes:
