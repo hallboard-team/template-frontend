@@ -2,9 +2,9 @@
 # -----------------------------
 # Pull & Start Podman Compose for Angular dev
 # Usage:
-#   ./pull-start-dev.sh <port> [node_version] [angular_version]
+#   ./pull-start-frontend-dev.sh <port> [node_version] [angular_version]
 # Example:
-#   ./pull-start-dev.sh 4200 22 20
+#   ./pull-start-frontend-dev.sh 4200 22 20
 # -----------------------------
 
 set -euo pipefail
