@@ -8,6 +8,7 @@
 
   "remoteUser": "vscode",
   "updateRemoteUserUID": true,
+  "shutdownAction": "stopCompose",
 
   "remoteEnv": {
     "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server-shared"
