@@ -1,7 +1,7 @@
 services:
   landing:
     image: ghcr.io/hallboard-team/node-v${NODE_VERSION:-22}_angular-v${ANGULAR_VERSION:-20}:latest
-    container_name: ${CONTAINER_NAME_LANDING:-fe-landing}
+    container_name: ${CONTAINER_NAME_LANDING:-fe-landing}_N-v${NODE_VERSION:-22}_v${ANGULAR_VERSION:-20}
 
     working_dir: /workspaces/app
 
