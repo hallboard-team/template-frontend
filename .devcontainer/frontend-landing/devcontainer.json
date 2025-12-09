@@ -1,0 +1,35 @@
+{
+  "name": "frontend-landing",
+
+  "dockerComposeFile": "../docker/docker-compose.landing.yml",
+  "service": "landing",
+
+  "workspaceFolder": "/workspaces/app",
+
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": true,
+
+  "remoteEnv": {
+    "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server-shared"
+  },
+
+  "postStartCommand": "cd client && ng serve landing --host 0.0.0.0 --port 4200",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "patcx.vscode-nuget-gallery",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "Angular.ng-template",
+        "johnpapa.Angular2",
+        "solnurkarim.html-to-css-autocompletion",
+        "maptz.regionfolder",
+        "github.vscode-pull-request-github",
+        "PKief.material-icon-theme",
+        "johnpapa.vscode-peacock",
+        "Gruntfuggly.todo-tree"
+      ]
+    }
+  }
+}

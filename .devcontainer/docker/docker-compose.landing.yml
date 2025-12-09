@@ -1,0 +1,26 @@
+services:
+  landing:
+    image: ghcr.io/hallboard-team/node-v${NODE_VERSION:-22}_angular-v${ANGULAR_VERSION:-20}:latest
+    container_name: ${CONTAINER_NAME_LANDING:-fe-landing}
+
+    working_dir: /workspaces/app
+
+    volumes:
+      # mount repo
+      - ../../:/workspaces/app:Z
+      # shared VS Code server cache
+      - ~/.cache/vscode-server-shared:/home/vscode/.vscode-server-shared:Z
+
+    environment:
+      - VSCODE_SERVER_DIR=/home/vscode/.vscode-server-shared
+
+    ports:
+      # landing → http://localhost:4201 (container:4200)
+      - "${PORT_LANDING:-4201}:4200"
+
+    command: >
+      bash -c "
+        node -v &&
+        ng version || true &&
+        sleep infinity
+      "
