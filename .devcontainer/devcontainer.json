@@ -1,23 +1,46 @@
 {
+  // Name in VS Code Remote Containers dropdown
   "name": "dev-${localWorkspaceFolderBasename}",
+
+  // Use your frontend docker-compose file
   "dockerComposeFile": "./docker/docker-compose.frontend.yml",
-  "service": "frontend",
+
+  // Main service VS Code attaches to by default
+  "service": "dashboard",
+
+  // Also start the landing service so both dev servers can run
+  "runServices": ["dashboard", "landing"],
+
+  // Where your repo is mounted inside the container
   "workspaceFolder": "/workspaces/app",
-  "updateRemoteUserUID": false,
+
+  // Very important:
+  // - Use "vscode" user from the Dockerfile
+  // - Remap its UID/GID to match the host user
+  //   so Git, file writes, etc. all work with bind mounts.
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": true,
+
+  // Match the env var set in the Dockerfile
   "remoteEnv": {
-    "VSCODE_SERVER_DIR": "/vscode/vscode-server"
+    "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server-shared"
   },
+
+  // VS Code extensions for this dev environment
   "customizations": {
     "vscode": {
       "extensions": [
+        // General tooling
         "patcx.vscode-nuget-gallery",
-        
+
+        // Angular / HTML helpers
         "formulahendry.auto-close-tag",
         "formulahendry.auto-rename-tag",
         "Angular.ng-template",
         "johnpapa.Angular2",
         "solnurkarim.html-to-css-autocompletion",
-        
+
+        // Quality of life
         "maptz.regionfolder",
         "github.vscode-pull-request-github",
         "PKief.material-icon-theme",
