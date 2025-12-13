@@ -1,6 +1,6 @@
 services:
   dashboard:
-    image: ghcr.io/hallboard-team/node-v${NODE_VERSION:-22}_angular-v${ANGULAR_VERSION:-20}:latest
+    image: ghcr.io/hallboard-team/node-angular:${NODE_VERSION:-24}-${ANGULAR_VERSION:-21}
     container_name: ${CONTAINER_NAME_DASHBOARD:-fe-dashboard}
 
     working_dir: /workspaces/app
