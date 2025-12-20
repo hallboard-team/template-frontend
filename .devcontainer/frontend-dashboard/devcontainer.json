@@ -24,6 +24,8 @@
         "Angular.ng-template",
         "johnpapa.Angular2",
         "solnurkarim.html-to-css-autocompletion",
+
+        "openai.chatgpt",
         "maptz.regionfolder",
         "github.vscode-pull-request-github",
         "PKief.material-icon-theme",
