@@ -1,5 +1,4 @@
 {
   "remoteUser": "root",
-  "editor.formatOnSave": true,
-  "remote.extensionKind": { "openai.chatgpt": ["workspace"] }
+  "editor.formatOnSave": true
 }
