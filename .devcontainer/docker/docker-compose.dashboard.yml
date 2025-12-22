@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   dashboard:
-    image: ghcr.io/hallboard-team/node-angular:${NODE_VERSION:-24}-${ANGULAR_VERSION:-21}
+    image: ghcr.io/hallboard-team/node-angular:node${NODE_VERSION:-24}-ng${ANGULAR_VERSION:-21}
     container_name: ${COMPOSE_PROJECT_NAME:-template}-dashboard
 
     working_dir: /workspaces/app
