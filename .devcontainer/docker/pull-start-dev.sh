@@ -2,9 +2,9 @@
 # -----------------------------
 # Pull & Start Docker Compose for Angular dev
 # Usage:
-#   ./pull-start-frontend-dev.sh <port> [node_version] [angular_version]
+#   ./pull-start-frontend-dev.sh <port> [node_version] [angular_version] [project_name]
 # Example:
-#   ./pull-start-frontend-dev.sh 4200 22 20
+#   ./pull-start-frontend-dev.sh 4200 22 20 myproject
 # -----------------------------
 
 set -euo pipefail
@@ -13,9 +13,10 @@ cd "$(dirname "$0")"
 PORT="${1:-4200}"
 NODE_VERSION="${2:-22}"
 ANGULAR_VERSION="${3:-20}"
+COMPOSE_PROJECT_NAME="${4:-${COMPOSE_PROJECT_NAME:-template}}"
 
 IMAGE="ghcr.io/hallboard-team/node-v${NODE_VERSION}_angular-v${ANGULAR_VERSION}:latest"
-CONTAINER_NAME="frontend_node-v${NODE_VERSION}_angular-v${ANGULAR_VERSION}_pnpm_p${PORT}_dev"
+CONTAINER_NAME="${COMPOSE_PROJECT_NAME}_frontend_dev"
 COMPOSE_FILE="docker-compose.frontend.yml"
 
 # Fix VS Code shared cache permissions
@@ -34,9 +35,9 @@ else
   fi
 fi
 
-echo "🚀 Starting Angular container '$CONTAINER_NAME' (Node $NODE_VERSION, Angular $ANGULAR_VERSION, port $PORT)..."
+echo "🚀 Starting Angular container '$CONTAINER_NAME' (Node $NODE_VERSION, Angular $ANGULAR_VERSION, port $PORT, project $COMPOSE_PROJECT_NAME)..."
 
-if CONTAINER_NAME="$CONTAINER_NAME" PORT="$PORT" NODE_VERSION="$NODE_VERSION" ANGULAR_VERSION="$ANGULAR_VERSION" \
+if COMPOSE_PROJECT_NAME="$COMPOSE_PROJECT_NAME" CONTAINER_NAME="$CONTAINER_NAME" PORT="$PORT" NODE_VERSION="$NODE_VERSION" ANGULAR_VERSION="$ANGULAR_VERSION" \
    docker-compose -f "$COMPOSE_FILE" up -d; then
 
   if docker ps --filter "name=$CONTAINER_NAME" --format '{{.Names}}' | grep -q "$CONTAINER_NAME"; then
