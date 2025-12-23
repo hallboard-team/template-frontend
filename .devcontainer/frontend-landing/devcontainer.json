@@ -1,5 +1,5 @@
 {
-  "name": "frontend-landing",
+  "name": "dev-${localWorkspaceFolderBasename}-front",
 
   "dockerComposeFile": "../docker/docker-compose.landing.yml",
   "service": "landing",
