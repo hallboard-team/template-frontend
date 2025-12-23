@@ -12,7 +12,8 @@
   "postStartCommand": "cd client && ng serve dashboard --host 0.0.0.0 --port 4200",
 
   "remoteEnv": {
-    "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server-shared"
+    "VSCODE_SERVER_DIR": "/home/vscode/.vscode-server-shared",
+    "CODEX_HOME": "/home/vscode/.codex"
   },
 
   "customizations": {
