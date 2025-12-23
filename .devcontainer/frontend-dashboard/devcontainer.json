@@ -1,5 +1,5 @@
 {
-  "name": "dev-${localWorkspaceFolderBasename}-front",
+  "name": "dev-${localWorkspaceFolderBasename}_front",
 
   "dockerComposeFile": "../docker/docker-compose.dashboard.yml",
   "service": "dashboard",
