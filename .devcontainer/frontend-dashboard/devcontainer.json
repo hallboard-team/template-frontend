@@ -8,6 +8,7 @@
 
   "remoteUser": "vscode",
   "updateRemoteUserUID": true,
+  "postCreateCommand": "pnpm config set store-dir ~/.pnpm-store",
   "shutdownAction": "stopCompose",
   "postStartCommand": "cd client && ng serve dashboard --host 0.0.0.0 --port 4200",
 
