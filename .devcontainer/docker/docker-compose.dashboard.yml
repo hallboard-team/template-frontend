@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   dashboard:
     image: ghcr.io/hallboard-team/node-angular:node${NODE_VERSION:-24}-ng${ANGULAR_VERSION:-21}
